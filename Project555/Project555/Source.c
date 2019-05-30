@@ -149,13 +149,11 @@ int main(int argc, char* argv[]) {
 	team *t_head = NULL, *new_team = NULL;
 	
 	char line_t[ARR_SIZE] = { 0 };
-	char line_g[ARR_SIZE*2] = { 0 };
+	char line_g[ARR_SIZE*2+1] = { 0 };
 	char name[ARR_SIZE] = { 0 };
 	player players[] = { 0 };
-	fprintf(fResult, "lol");
 	while (fgets(line_t, ARR_SIZE, fTeams) != (NULL))
 	{
-		fprintf(fResult,"%s",line_t);
 		new_team=create_team(line_t,players,0,0,0,0,t_head);
 		add_Players(new_team, fPlayers);
 		t_head = new_team;
@@ -164,11 +162,15 @@ int main(int argc, char* argv[]) {
 	char team1[ARR_SIZE] = {0};
 	char team2[ARR_SIZE] = { 0 };
 	char ch = { 0 };
-	while (fgets(line_g, sizeof line_g, fGames) != (NULL))
+
+	while (fgets(line_g, ARR_SIZE*2+1, fGames) != (NULL))
 	{
 		int j = 0;
-		while (ch != ":") {
+		while (line_g[j] != ":") {
+			if (line_g[j] == ":")
+				break;
 			team1[j] = line_g[j];
+			j++;
 		}
 		for (int i = strlen(team1) + 1; i < ARR_SIZE; i++) {
 			team2[i] = line_g[i];
@@ -176,6 +178,7 @@ int main(int argc, char* argv[]) {
 		for (int i = 0; i < ARR_SIZE - strlen(team1); i++) {
 			strcat(team1," ");
 		}
+
 		play_Game(find_team(t_head,team1),find_team(t_head,team2),fResult);
 	}
 	return 0;

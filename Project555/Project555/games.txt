@@ -1,0 +1,8 @@
+ajax:tau fc
+tau fc:liverpool
+liverpool:ajax
+ajax:tau fc
+liverpool:tau fc
+tau fc:liverpool
+liverpool:beer sheva
+ajax:tau fc

@@ -1,0 +1,9 @@
+Player name          Age  Attack Defense Team name
+chingiz              24   55     97      tau fc
+jonida maliqi        27   48     34      liverpool
+tamara todevska      34   64     67      tau fc
+duncan laurence      31   76     66      tau fc
+leonora              29   100    333     ajax
+victor crone         170  4566   60      ajax
+tamta                34   65     3566    beer sheva
+leonara              34   65     56      ajax
